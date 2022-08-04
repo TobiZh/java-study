@@ -2,18 +2,22 @@ package com.sh.tobi.async.controller;
 
 
 import cn.hutool.core.lang.Console;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.sh.tobi.async.ant.entity.TUserCount;
+import com.sh.tobi.async.ant.entity.TUserFollow;
+import com.sh.tobi.async.ant.service.impl.TUserCountServiceImpl;
+import com.sh.tobi.async.ant.service.impl.TUserFollowServiceImpl;
 import com.sh.tobi.async.service.ThreadService;
 import com.sh.tobi.async.trhread.MyCallable;
 import com.sh.tobi.async.trhread.MyRunnable;
 import com.sh.tobi.async.trhread.MyThread;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 import static java.lang.Thread.sleep;
@@ -146,5 +150,18 @@ public class ThreadController {
         }
         Console.log("主线程执行完成");
         return count;
+    }
+
+
+    @GetMapping("like")
+    public String like(int fromUserId,int toUserId) {
+        String isSave=threadService.like(fromUserId,toUserId);
+        return isSave;
+    }
+
+    @GetMapping("unlike")
+    public String unlike(int fromUserId,int toUserId) {
+        String isSave=threadService.like(fromUserId,toUserId);
+        return isSave;
     }
 }

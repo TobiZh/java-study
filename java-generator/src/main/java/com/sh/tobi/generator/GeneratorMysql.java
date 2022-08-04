@@ -4,30 +4,17 @@ import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.PackageConfig;
-import com.baomidou.mybatisplus.generator.config.StrategyConfig;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class JavaGeneratorApplicationTests {
-
-    @Test
-    void contextLoads() {
+public class GeneratorMysql {
 
 
-    }
-
-
-    /**
-     * 数据源配置
-     */
     private static final DataSourceConfig DATA_SOURCE_CONFIG = new DataSourceConfig
             .Builder("jdbc:mysql://localhost:3306/mybatis-plus-demo?serverTimezone=Asia/Shanghai",
             "root", "root")
             .build();
 
-    @Test
-    void generator(){
+
+    public static void main(String[] args) {
         AutoGenerator generator = new AutoGenerator(DATA_SOURCE_CONFIG);
 
         GlobalConfig globalConfig=new GlobalConfig.Builder()
@@ -44,7 +31,5 @@ class JavaGeneratorApplicationTests {
         generator.packageInfo(packageConfig);
 
         generator.execute();
-
     }
-
 }

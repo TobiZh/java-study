@@ -5,4 +5,7 @@ public interface ThreadService {
     int startCount();
 
     int changeStartCount();
+
+
+    String like(int fromUserId,int toUserId);
 }

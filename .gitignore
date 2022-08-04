@@ -1,0 +1,5 @@
+# Project exclude paths
+/java-async/target/
+/java-common/target/
+/java-producer/target/
+/java-rabbitmq-consumer/target/
