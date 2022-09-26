@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.PackageConfig;
+import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 
 public class GeneratorMysql {
 
@@ -28,6 +29,7 @@ public class GeneratorMysql {
                 .parent("com.sh.tobi.common")
                 .moduleName("ant")
                 .build();
+
         generator.packageInfo(packageConfig);
 
         generator.execute();

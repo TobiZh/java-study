@@ -164,4 +164,6 @@ public class ThreadController {
         String isSave=threadService.like(fromUserId,toUserId);
         return isSave;
     }
+
+
 }

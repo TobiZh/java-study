@@ -1,5 +1,6 @@
 package com.sh.tobi.base.base.feature;
 
+
 public class Test {
 
     public static void main(String[] args) {
@@ -10,12 +11,9 @@ public class Test {
 
 
         Tobi tobi=new Tobi();
-        String
         tobi.setAddress("上海市");
-
-        tobi.print();
         System.out.println(tobi.getWork());
-        System.out.println(tobi.toString());
+
 
     }
 }
